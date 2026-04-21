@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
-import { ArrowRight, Target, Menu, X } from "lucide-react";
+import { ArrowRight, Target, Menu, X, Phone } from "lucide-react";
 import logoImage from "/logo.png";
 import FreeAuditModal from "./FreeAuditModal";
 
-const Header = () => {
+const Header = ({ onBookCall }) => {
   const [scrolled, setScrolled] = useState(false);
   const [isAuditModalOpen, setIsAuditModalOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -103,12 +103,12 @@ const Header = () => {
             justify-content: space-between;
             align-items: center;
             gap: 1.25rem;
-            padding: 0.85rem 0;
+            padding: 0.5rem 0;
             transition: padding 0.3s ease;
           }
 
           .header.scrolled .header-container {
-            padding: 0.6rem 0;
+            padding: 0.4rem 0;
           }
 
           /* Logo */
@@ -125,14 +125,14 @@ const Header = () => {
           }
 
           .logo img {
-            height: 62px;
+            height: 74px;
             width: auto;
             object-fit: contain;
             transition: height 0.3s ease;
           }
 
           .header.scrolled .logo img {
-            height: 54px;
+            height: 60px;
           }
 
           /* Desktop Navigation */
@@ -352,11 +352,11 @@ const Header = () => {
             }
 
             .logo img {
-              height: 52px;
+              height: 64px;
             }
 
             .header-container {
-              padding: 0.7rem 0;
+              padding: 0.4rem 0;
             }
           }
 
@@ -365,11 +365,11 @@ const Header = () => {
               padding: 0 14px;
             }
             .logo img {
-              height: 46px;
+              height: 58px;
             }
             .header-container {
               gap: 0.75rem;
-              padding: 0.65rem 0;
+              padding: 0.3rem 0;
             }
             .mobile-nav-drawer {
               width: 85%;
@@ -389,7 +389,7 @@ const Header = () => {
               padding: 0 12px;
             }
             .logo img {
-              height: 40px;
+              height: 52px;
             }
             .btn-primary {
               font-size: 0.8rem;
@@ -431,6 +431,12 @@ const Header = () => {
               className="btn btn-primary"
             >
               <Target size={16} /> Free Audit
+            </button>
+            <button
+              onClick={onBookCall}
+              className="btn btn-primary"
+            >
+              Book Call <Phone size={16} />
             </button>
             <Link
               to="/contact"

@@ -14,9 +14,7 @@ import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
 
 function App() {
-  // Only open the popup if the user hasn't already submitted it
-  const alreadySubmitted = localStorage.getItem("dq_popup_submitted");
-  const [isScheduleModalOpen, setIsScheduleModalOpen] = useState(!alreadySubmitted);
+  const [isScheduleModalOpen, setIsScheduleModalOpen] = useState(false);
 
   const handleCloseScheduleModal = () => {
     setIsScheduleModalOpen(false);
@@ -32,10 +30,10 @@ function App() {
             onClose={handleCloseScheduleModal}
           />
           <CursorFluid />
-          <Header />
+          <Header onBookCall={() => setIsScheduleModalOpen(true)} />
           
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Home onBookCall={() => setIsScheduleModalOpen(true)} />} />
             <Route path="/services" element={<ServicesPage />} />
             <Route path="/portfolio" element={<PortfolioPage />} />
             <Route path="/about" element={<AboutPage />} />

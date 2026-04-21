@@ -287,20 +287,8 @@ export default function Chatbot() {
   useEffect(() => {
     const tooltipTimer = setTimeout(() => setShowGreetingTooltip(true), 1400);
 
-    const autoOpenTimer = setTimeout(() => {
-      if (!hasInteracted) {
-        setIsOpen(true);
-        setShowGreetingTooltip(false);
-        autoCloseTimerRef.current = setTimeout(() => {
-          setIsOpen((current) => (current ? false : current));
-        }, 12000);
-      }
-    }, 3200);
-
     return () => {
       clearTimeout(tooltipTimer);
-      clearTimeout(autoOpenTimer);
-      if (autoCloseTimerRef.current) clearTimeout(autoCloseTimerRef.current);
     };
   }, [hasInteracted]);
 

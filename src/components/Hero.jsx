@@ -193,7 +193,7 @@ const ConnectModal = ({ isOpen, onClose }) => {
   );
 };
 
-const Hero = () => {
+const Hero = ({ onBookCall }) => {
   const [wordIndex, setWordIndex] = useState(0);
   const [isConnectModalOpen, setIsConnectModalOpen] = useState(false);
 
@@ -213,8 +213,8 @@ const Hero = () => {
         .hero {
           position: relative;
           overflow: hidden;
-          min-height: 100vh;
-          padding: clamp(72px, 8vh, 110px) 16px 56px;
+          min-height: 85vh;
+          padding: clamp(20px, 4vh, 60px) 16px 32px;
           background:
             radial-gradient(circle at top left, rgba(99,102,241,0.15), transparent 35%),
             radial-gradient(circle at top right, rgba(34,197,94,0.10), transparent 30%),
@@ -259,7 +259,7 @@ const Hero = () => {
           z-index: 2;
           max-width: 1180px;
           margin: 0 auto;
-          min-height: calc(100vh - 120px);
+          min-height: auto;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -269,7 +269,7 @@ const Hero = () => {
           width: 100%;
           max-width: 900px;
           text-align: center;
-          padding: 24px 0;
+          padding: 12px 0;
         }
 
         .hero-badge {
@@ -282,7 +282,7 @@ const Hero = () => {
           color: #0f172a;
           border-radius: 999px;
           cursor: pointer;
-          margin-bottom: 22px;
+          margin-bottom: 10px;
           backdrop-filter: blur(10px);
           box-shadow: 0 10px 30px rgba(0,0,0,0.05);
           transition: transform 0.25s ease, background 0.25s ease;
@@ -317,14 +317,14 @@ const Hero = () => {
 
         .hero-description {
           max-width: 760px;
-          margin: 18px auto 0;
+          margin: 14px auto 0;
           font-size: clamp(1rem, 2vw, 1.18rem);
           line-height: 1.7;
           color: #4b5563;
         }
 
         .hero-actions {
-          margin-top: 30px;
+          margin-top: 20px;
           display: flex;
           justify-content: center;
           gap: 14px;
@@ -533,14 +533,17 @@ const Hero = () => {
 
         @media (max-width: 768px) {
           .hero {
+            padding-top: 16px;
+            padding-bottom: 24px;
             padding-left: 14px;
             padding-right: 14px;
+            min-height: auto;
           }
 
           .hero-container {
             min-height: auto;
-            padding-top: 26px;
-            padding-bottom: 18px;
+            padding-top: 5px;
+            padding-bottom: 5px;
           }
 
           .hero-content {
@@ -550,6 +553,8 @@ const Hero = () => {
           .hero-actions {
             flex-direction: column;
             align-items: stretch;
+            gap: 12px;
+            margin-top: 18px;
           }
 
           .btn {
@@ -565,8 +570,9 @@ const Hero = () => {
 
         @media (max-width: 480px) {
           .hero-badge {
-            padding: 9px 14px;
-            gap: 8px;
+            padding: 8px 14px;
+            gap: 6px;
+            margin-bottom: 8px;
           }
 
           .badge-text {
@@ -627,9 +633,9 @@ const Hero = () => {
           </p>
 
           <div className="hero-actions">
-            <a href="#contact" className="btn btn-primary">
+            <button onClick={onBookCall} className="btn btn-primary">
               Get Started <ArrowRight size={20} />
-            </a>
+            </button>
             <a href="#portfolio" className="btn btn-outline">
               <Play size={20} strokeWidth={1.8} /> View Our Work
             </a>

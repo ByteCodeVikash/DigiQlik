@@ -15,15 +15,7 @@ const ScheduleMeetingModal = ({ isOpen, onClose }) => {
   const [errorMsg, setErrorMsg] = useState("");
 
   useEffect(() => {
-    if (localStorage.getItem(STORAGE_KEY)) return;
-
-    let timer;
-    if (isOpen) {
-      timer = setTimeout(() => setShowModal(true), 6000);
-    } else {
-      setShowModal(false);
-    }
-    return () => clearTimeout(timer);
+    setShowModal(isOpen);
   }, [isOpen]);
 
   const resetForm = () => {
