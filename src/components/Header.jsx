@@ -417,6 +417,9 @@ const Header = ({ onBookCall }) => {
                 <NavLink to="/portfolio">Portfolio</NavLink>
               </li>
               <li>
+                <NavLink to="/courses">Courses</NavLink>
+              </li>
+              <li>
                 <NavLink to="/about">About/Team</NavLink>
               </li>
               <li>
@@ -467,6 +470,7 @@ const Header = ({ onBookCall }) => {
                 { id: "/", label: "Home" },
                 { id: "/services", label: "Services" },
                 { id: "/portfolio", label: "Portfolio" },
+                { id: "/courses", label: "Courses" },
                 { id: "/about", label: "About/Team" },
                 { id: "/contact", label: "Contact" },
               ].map((item, index) => (

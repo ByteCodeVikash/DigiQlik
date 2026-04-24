@@ -12,6 +12,7 @@ import ServicesPage from "./pages/ServicesPage";
 import PortfolioPage from "./pages/PortfolioPage";
 import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
+import CoursesPage from "./pages/CoursesPage";
 
 function App() {
   const [isScheduleModalOpen, setIsScheduleModalOpen] = useState(false);
@@ -38,6 +39,7 @@ function App() {
             <Route path="/portfolio" element={<PortfolioPage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/contact" element={<ContactPage />} />
+            <Route path="/courses" element={<CoursesPage />} />
           </Routes>
           
           <Footer />

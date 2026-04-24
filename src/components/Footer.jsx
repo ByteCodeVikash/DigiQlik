@@ -43,11 +43,12 @@ const Footer = () => {
                   <video
                     className="footer-logo-video"
                     src="/logo_video.mp4"
+                    poster="/logo.png"
                     autoPlay
                     loop
                     muted
                     playsInline
-                    preload="auto"
+                    preload="metadata"
                   />
                 </div>
               </a>
@@ -105,9 +106,10 @@ const Footer = () => {
               <h4 className="footer-heading">Company</h4>
               <ul className="footer-links">
                 <li><a href="#about">About Us</a></li>
+                <li><a href="/courses">Courses</a></li>
                 <li><a href="#careers">Careers</a></li>
                 <li><a href="#blog">Blog</a></li>
-                <li><a href="#cases">Team</a></li> 
+                <li><a href="#cases">Team</a></li>
               </ul>
             </div>
 
